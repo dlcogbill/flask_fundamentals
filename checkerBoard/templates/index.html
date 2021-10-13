@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Untitled</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+        <h1 style="color: {{color}}; background-color: {{alternateColor}};">Checkerboard</h1>
+        <div class="container">
+            {% for row in range(0,rows): %}
+                <div class="row">
+                {% for col in range(0,cols): %}
+                    {% if row % 2 == 0: %}
+                        {% if col % 2 == 0 %}
+                            <div class="boardBox" style="background-color: {{color}};"></div>
+                        {% else %}
+                            <div class="boardBox" style="background-color: {{alternateColor}};"></div>
+                        {% endif %}
+                    {% else: %}
+                        {% if col % 2 == 0: %}
+                            <div class="boardBox" style="background-color: {{alternateColor}};"></div>
+                        {% else %}
+                            <div class="boardBox" style="background-color: {{color}};"></div>
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+                </div>
+            {% endfor %}
+        </div>
+    </body>
+</html>
