@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- My CSS -->
+        <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+        <title>Dojo Survey</title>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Dojo Survey</h1>
+            <form class="formContainer" action='/process' method='post'>
+                <label class="form-label" for='name'>Name</label>
+                <input type='text' name='name'>
+                <label class="form-label" for="location">Dojo Location:</label>
+                <select name="location">
+                    <option value="Chicago">Chicago</option>
+                    <option value="Seattle">Seattle</option>
+                    <option value="Online">Online</option>
+                    <option value="Burbank">Burbank</option>
+                    <option value="Bellevue">Bellevue</option>
+                </select>
+                <label class="form-label" for="favorite_language">Favorite Language:</label>
+                <select name="favorite_language">
+                    <option value="HTML">HTML</option>
+                    <option value="CSS">CSS</option>
+                    <option value="JavaScript">JavaScript</option>
+                    <option value="Python">Python</option>
+                    <option value="C#">C#</option>
+                </select>
+                <p class="form-label">Preferred Platform:</p>
+                <div>
+                    <input type="radio" name="platform" value="PC">
+                    <label for="html">PC</label>
+                    <input type="radio" name="platform" value="Mac">
+                    <label for="html">Mac</label>
+                    <input type="radio" name="platform" value="Linux">
+                    <label for="html">Linux</label>
+                </div>
+                <p class="form-label">Reasons for Interest in Coding:</p>
+                <div class="reasonBox">
+                    <span><input type="checkbox" name="reason" value="Pleasure"><label for="reason1">Pleasure</label></span>
+                    <span><input type="checkbox" name="reason" value="Money"><label for="reason2">Money</label></span>
+                    <span><input type="checkbox" name="reason" value="Glory"><label for="reason3">Glory</label></span>
+                    <span><input type="checkbox" name="reason" value="Admiration"><label for="reason4">Admiration</label></span>
+                    <span><input type="checkbox" name="reason" value="Knowledge"><label for="reason5">Knowledge</label></span>
+                    <span><input type="checkbox" name="reason" value="Challenge"><label for="reason6">Challenge</label></span>
+                    <span><input type="checkbox" name="reason" value="Eventual World Domination"><label for="reason7">Eventual World Domination</label></span>
+                </div>
+                <label for="comment">Comment:</label>
+                <textarea name="comment" rows="4" cols="50"></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </body>
+</html>

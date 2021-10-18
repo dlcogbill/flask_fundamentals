@@ -1,0 +1,72 @@
+* { /*CSS Reset*/
+	vertical-align: baseline;
+	font-weight: inherit;
+	font-family: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	border: 0 none;
+	outline: 0;
+	padding: 0;
+	margin: 0;
+	}
+
+h1 {
+    display: block;
+    font-size: 2em;
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+	color: yellow;
+}
+
+#resultsTitle {
+	color: blue;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(46, 46, 46);
+	color: rgb(150, 111, 111);
+    border-radius: 15px;
+    padding: 15px;
+    margin: 0 auto;
+    width: 30%;
+}
+
+.formContainer
+{
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(46, 46, 46);
+    border-radius: 15px;
+    color: rgb(150, 111, 111);
+    padding: 15px;
+    margin: 0 auto;
+    width: 30%;
+}
+
+.reasonBox{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+button {
+    width: 75px;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 15px;
+    background-color: yellow;
+}
+
+ul {
+	list-style-position: inside;
+}

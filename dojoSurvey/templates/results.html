@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- My CSS -->
+        <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+        <title>Dojo Survey</title>
+    </head>
+    <body>
+        <div class="container">
+            <h1 id="resultsTitle">{{session['user_name']}}</h1>
+            <p>Dojo Location: {{session['user_location']}}</p>
+            <p>Favorite Language: {{session['user_favorite_language']}}</p>
+            <p>Preferred Platform: {{session['user_platform']}}</p>
+            <p>Reasons for Coding:</p>
+            <ul>
+                {% for i in session['reasons'] %}
+                    <li>{{i}}</li>
+                {% endfor %}
+            </ul>
+            <p>Comment: {{session['user_comment']}}</p>
+            <hr>
+            <form action='/results' method='post'>
+                <button type="submit">Home</button>
+            </form>
+        </div>
+    </body>
+</html>
