@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- My CSS -->
+        <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+        <title>Welcome to the Great Number game</title>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Welcome to the Great Number game</h1>
+            <p>I am thinking of a number between 1 and 100</p>
+            {% if session['attempts'] > 0:%}
+                {% if session['user_guess'] == session['solution']:  %}
+                <div class="correct">
+                    <form action='/success' method='post'>
+                        <label for='name'><h2>You guessed it in {{session['attempts']}} attempts! The number was {{session['solution']}}</h2></label>
+                        <button type="submit">Play again!</button>
+                    </form>
+                </div>
+                {% elif session['user_guess'] > session['solution']: %}
+                        <div class="wrong">
+                            <h2>Too High!</h2>
+                        </div>
+                        <div class="guessBox">
+                            <form action='/guess' method='post'>
+                                <label for='name'>Take a guess</label>
+                                <input type='text' name='answer'>
+                                <button type="submit">Guess</button>
+                            </form>
+                        </div>
+                {% elif session['user_guess'] < session['solution']: %}
+                        <div class="wrong">
+                            <h2>Too Low!</h2>
+                        </div>
+                        <div class="guessBox">
+                            <form action='/guess' method='post'>
+                                <label for='name'>Take a guess</label>
+                                <input type='text' name='answer'>
+                                <button type="submit">Guess</button>
+                            </form>
+                        </div>
+                {% endif %}
+            {% else: %}
+                <div class="guessBox">
+                    <form action='/guess' method='post'>
+                        <label for='name'>Take a guess</label>
+                        <input type='text' name='answer'>
+                        <button type="submit">Guess</button>
+                    </form>
+                </div>
+            {% endif %}
+        </div>
+    </body>
+</html>
